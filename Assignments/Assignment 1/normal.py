@@ -9,7 +9,6 @@ def GenerateNormalDistribution (sampleSize):
     
     # numpy function to sample the normal distribution
     x_norm=np.random.normal(x_mean,standard_deviation,sampleSize)
-    #
     f=open('x_normal.dat','w')
     for x in x_norm:
         f.write(str(x)+'\n')
@@ -26,16 +25,18 @@ def GenerateNormalDistribution (sampleSize):
     average = np.average(x_norm)
     variance = np.var(x_norm)
     std = np.sqrt(variance)
-    
     # Get the Differences
     meanDiff = abs(average - x_mean)**2
     varianceDiff = abs(variance - standard_deviation**2)**2
     stdDiff = abs(std - standard_deviation)**2
     
     # Textify it
-    mean_text = f'Mean = {meanDiff:.3e}'
-    std_text = f'STD = {stdDiff:.3e}'
-    variance_text = f'Variance = {varianceDiff:.3e}'
+    mean_text = f'Mean = {average:.3e}'
+    std_text = f'STD = {std:.3e}'
+    variance_text = f'Variance = {variance:.3e}'
+    meanDiff_text = f'Mean Diff = {meanDiff:.3e}'
+    stdDiff_text = f'STD Diff = {stdDiff:.3e}'
+    varianceDiff_text = f'Variance Diff = {varianceDiff:.3e}'
 
     #Save Plot as Image
     plot.hist(x_norm, bins=nbins)
@@ -44,9 +45,15 @@ def GenerateNormalDistribution (sampleSize):
     # Add Text to Plot
     plot.text(0.95, 0.95, mean_text, transform=plot.gca().transAxes, fontsize=12,
           verticalalignment='top', horizontalalignment='right')
-    plot.text(0.95, 0.90, std_text, transform=plot.gca().transAxes, fontsize=12,
+    plot.text(0.95, 0.90, meanDiff_text, transform=plot.gca().transAxes, fontsize=12,
           verticalalignment='top', horizontalalignment='right')
-    plot.text(0.95, 0.85, variance_text, transform=plot.gca().transAxes, fontsize=12,
+    plot.text(0.95, 0.85, std_text, transform=plot.gca().transAxes, fontsize=12,
+          verticalalignment='top', horizontalalignment='right')
+    plot.text(0.95, 0.80, stdDiff_text, transform=plot.gca().transAxes, fontsize=12,
+          verticalalignment='top', horizontalalignment='right')
+    plot.text(0.95, 0.75, variance_text, transform=plot.gca().transAxes, fontsize=12,
+          verticalalignment='top', horizontalalignment='right')
+    plot.text(0.95, 0.70, varianceDiff_text, transform=plot.gca().transAxes, fontsize=12,
           verticalalignment='top', horizontalalignment='right')
     
     # Save Image
@@ -57,7 +64,7 @@ def GenerateNormalDistribution (sampleSize):
 sample_size = 10000
 
 # Loop 10 times and multiply the Sample Size by 2
-for i in range(10):
+for i in range(6):
     GenerateNormalDistribution(sample_size)
     sample_size*=2
     
