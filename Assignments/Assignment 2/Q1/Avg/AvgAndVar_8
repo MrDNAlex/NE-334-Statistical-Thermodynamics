@@ -1,0 +1,12 @@
+Kinetic Energy (Settings : Steps = 4000, Dt = 0.002 * femtosec, Ensemble = NVE)
+Average : 12.4401735005 (kJ/mole)
+Variance : 3.1982737725903725 (kJ/mole)
+
+Potential Energy (Settings : Steps = 4000, Dt = 0.002 * femtosec, Ensemble = NVE)
+Average : 4.525151510750653 (kJ/mole)
+Variance : 3.198276404824032 (kJ/mole)
+
+Total Energy (Settings : Steps = 4000, Dt = 0.002 * femtosec, Ensemble = NVE)
+Average : 16.965324422000002 (kJ/mole)
+Variance : 1.0619160011691201e-12 (kJ/mole)
+

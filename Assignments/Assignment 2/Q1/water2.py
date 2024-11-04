@@ -9,13 +9,16 @@ import mdtraj
 import mdtraj.reporters
 import numpy as np
 
-#####Parameters
+#####Parameters - Alexandre Dufresne-Nappert - 20948586
 steps = 10000
 skipSteps = 1
 Temperature=298. # temperature in Kelvin
-dt = .1 * unit.femtoseconds 
+dt = 0.01 * unit.femtoseconds 
 print(dt)
-ensemble='NVE' # NVE or NVT
+ensemble='NVE' 
+
+
+# NVE or NVT
 #ensemble='NVT' # NVE or NVT
 #####
 
@@ -31,9 +34,6 @@ nonbonded = app.NoCutoff
 system = forcefield.createSystem(pdb.topology, nonbondedMethod=nonbonded, 
                                      nonbondedCutoff=1e3*unit.nanometer,
                                      constraints=None,rigidWater=False)
-
-
-
 
 if (ensemble == 'NVT'):
 	integrator = mm.LangevinIntegrator(Temperature*unit.kelvin, 1.0/unit.picoseconds,dt)
