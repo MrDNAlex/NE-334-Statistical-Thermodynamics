@@ -236,14 +236,14 @@ ensemble = "NVE"
 GenGraphs(0, 10000, 298, 0.01, ensemble)
 
 # Get the Averages And Variances for new Settings
-#Steps = 1000
-#index = 1
-#for i in range(3):
-#    DT = 0.001
-#    for j in range(3):
-#        GenGraphs(index, Steps, 298, DT, ensemble, True)
-#        index+=1
-#        DT *=2
-#    Steps*=2
+Steps = 1000
+index = 1
+for i in range(3):
+    DT = 0.001
+    for j in range(3):
+        GenGraphs(index, Steps, 298, DT, ensemble, True)
+        index+=1
+        DT *=2
+    Steps*=2
     
     
