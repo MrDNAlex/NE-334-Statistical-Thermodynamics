@@ -2,6 +2,7 @@ from __future__ import print_function
 
 # Imports
 import numpy as np
+import pandas as pd
 from scipy.integrate import solve_bvp, solve_ivp
 from scipy.optimize import fsolve
 import matplotlib.pyplot as plt
@@ -15,6 +16,12 @@ import mdtraj
 import mdtraj.reporters
 import numpy as np
 
+# Redo Q1 and Q2, try and learn Pandas to do this, increase the Step Size and Dt independent from each other to see their affects
+# Honestly a hard reset is probably what needs to be done. Make a single Graph, only for the Real Settings I want to test for have that as it's own system
+# Then for all the increase in stuff have it's own section / function to add it to a Data Frame meant for it's own task
+
+# You will need to make sure the pdb file in is the same folder as the file,
+# and you also need to create a Avg and Graphs folder for this to work
 
 def Simulation (Numsteps, temp, dtConst, ensembleType):
     #####Parameters - Alexandre Dufresne-Nappert - 20948586

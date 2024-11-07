@@ -15,6 +15,8 @@ import mdtraj
 import mdtraj.reporters
 import numpy as np
 
+# You will need to make sure the pdb file in is the same folder as the file,
+# and you also need to create a Avg and Graphs folder for this to work
 
 def Simulation (Numsteps, temp, dtConst, ensembleType):
     #####Parameters - Alexandre Dufresne-Nappert - 20948586
@@ -233,15 +235,15 @@ def GenGraphs (index, Numsteps, temp, dtConst, ensembleType, saveLastOnly = Fals
 ensemble = "NVT"    
 
 # Get the Averages And Variances for new Settings
-#Steps = 1000
-#index = 1
-#for i in range(2):
-#    DT = 0.001
-#    for j in range(3):
-#        GenGraphs(index, Steps, 298, DT, ensemble, True)
-#        index+=1
-#        DT *=2
-#    Steps*=2
+Steps = 1000
+index = 1
+for i in range(2):
+    DT = 0.001
+    for j in range(3):
+        GenGraphs(index, Steps, 298, DT, ensemble, True)
+        index+=1
+        DT *=2
+    Steps*=2
 
 # Generate Main Settings
 GenGraphs(10, 100000, 298, 0.01, ensemble)
