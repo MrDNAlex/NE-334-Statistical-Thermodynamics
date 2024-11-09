@@ -60,10 +60,13 @@ for i in range(nbins):
         OO_histo[i]=OO_histo[i]/(2.*np.pi*r*r*dr*N*N/volume)/float(Nsteps)
         OH_histo[i]=OH_histo[i]//(2.*np.pi*r*r*dr*N*N*4./volume)/float(Nsteps)
 
+# Save the g(r) function
 OO_file=open('OO_histo','w')
 for i in range(nbins):
 	OO_file.write(str(rmin+i*dr)+' '+str(OO_histo[i])+'\n')
 OO_file.close()
+
+# Save the g(r) function
 OH_file=open('OH_histo','w')
 for i in range(nbins):
 	OH_file.write(str(rmin+i*dr)+' '+str(OH_histo[i])+'\n')
